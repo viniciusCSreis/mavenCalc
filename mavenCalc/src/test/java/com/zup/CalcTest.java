@@ -1,11 +1,33 @@
 package com.zup;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class CalcTest extends TestCase{
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-    public void testSun(){
-        Calc calc = new Calc();
-        assertEquals(calc.sum(1, 2), 0.0);
+class CalcTest{
+
+    private Calc calc;
+
+    @BeforeEach
+    protected void init(){
+        this.calc = new Calc();
+
     }
+
+    @Test
+    protected void sumOfPositiveNumbersInAscendingOrder() {
+        assertEquals(calc.sum(1, 2), 3,0.0001);
+    }
+    @Test
+    protected void sumOfPositiveNumbersInDecreasingOrder() {
+        assertEquals(calc.sum(5, 4), 9,0.0001);
+    }
+
+    @Test
+    protected void sumOfNegativeNumbers(){
+        assertThrows(RuntimeException.class, () -> calc.sum(-1,1));
+    }
+
 }
