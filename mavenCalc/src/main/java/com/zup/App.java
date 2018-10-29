@@ -8,7 +8,8 @@ public class App
 {
     public static void main( String[] args ) {
         Calc calc = new Calc();
-        System.out.println( "1 + 2 ="+ calc.sum(1,2));
-        System.out.println( "1 * 2 ="+ calc.multiple(1,2));
+        System.out.println( "1 + 2 ="+ calc.addition(1,2));
+        System.out.println( "1 + 2 ="+ calc.addition(-1,2));
+        System.out.println( "1 + 2 ="+ calc.addition(1,-2));
     }
 }

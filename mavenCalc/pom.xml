@@ -7,6 +7,12 @@
   <version>1.0-SNAPSHOT</version>
   <name>mavenCalc</name>
   <url>http://maven.apache.org</url>
+  <properties>
+    <!-- Optional URL to server. Default value is http://localhost:9000 -->
+    <sonar.host.url>
+      http://localhost:9000
+    </sonar.host.url>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -24,6 +30,11 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.5.0.1254</version>
       </plugin>
     </plugins>
   </build>
