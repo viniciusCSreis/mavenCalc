@@ -3,7 +3,7 @@ package com.zup;
 class Calc{
     protected double addition(double a, double b) {
         if(a < 0 || b < 0)
-            throw new RuntimeException("Nao Deve somar numero negativo");
+            throw new MyException("Nao Deve somar numero negativo");
         return a + b;
     }
     protected double multiplication(double a, double b){

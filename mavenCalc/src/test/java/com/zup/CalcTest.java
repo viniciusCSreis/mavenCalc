@@ -31,7 +31,9 @@ class CalcTest{
     @Test
     protected void additionOfNegativeNumbers(){
 
-        assertThrows(RuntimeException.class, () -> calc.addition(-1,1));
+        assertThrows(MyException.class, () -> calc.addition(-1,1));
+        assertThrows(MyException.class, () -> calc.addition(1,-1));
+        assertThrows(MyException.class, () -> calc.addition(-1,-1));
     }
 
     //subtraction
